@@ -18,8 +18,7 @@ public class MinePayGround {
 
     public void start() {
         System.out.println("Welcome to Minesweeper!");
-        boolean isPlay = true;
-        while (isPlay) {
+        while (true) {
             int size = promptGridSize();
             int maxMines = (int) Math.floor(size * size * 0.35);
             int mines = promptMinesCount(maxMines);
@@ -55,10 +54,10 @@ public class MinePayGround {
                     }
                 }
             }
-            System.out.println("Press ENTER to play again or type 'exit' to quit...");
+            System.out.println("1.Press any key to play again ! \n\t\t2.Type 'exit' exit from the game");
+            scanner.nextLine();
             String line = scanner.nextLine();
             if (line.trim().equalsIgnoreCase("exit")) {
-                isPlay = false;
                 break;
 
             }
@@ -73,8 +72,8 @@ public class MinePayGround {
         int gridSize = 0;
         while (true) {
             System.out.println("Enter the size of the grid (e.g. 4 for a 4x4 grid):");
-            gridSize = scanner.nextInt();
             try {
+                gridSize = scanner.nextInt();
                 if (gridSize < 2 || gridSize > 26) {
                     System.out.println("Please enter a size between 2 and 26.");
                     continue;
@@ -94,8 +93,9 @@ public class MinePayGround {
         int mines = 0;
         while (true) {
             System.out.println("Enter the number of mines to place on the grid (maximum is 35% of the total squares):");
-            mines = scanner.nextInt();
+
             try {
+                mines = scanner.nextInt();
                 if (mines < 1 || mines > maxMines) {
                     System.out.printf("Please enter a number between 1 and %d.%n", maxMines);
                     continue;

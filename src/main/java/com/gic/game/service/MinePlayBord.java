@@ -1,7 +1,6 @@
 package com.gic.game.service;
 
 
-
 import com.gic.game.model.Cell;
 import com.gic.game.util.MineValidator;
 
@@ -57,22 +56,22 @@ public class MinePlayBord {
     /**
      * Calculates and updates the number of adjacent mines for each non-mine cell
      * in the Minesweeper grid.
-
+     * <p>
      * This method iterates over all cells in the game grid. For each cell that is not a mine,
      * it checks its surrounding cells (up to 8 possible adjacent positions: top, bottom,
      * left, right, and the four diagonals) to count how many contain mines.
-
+     * <p>
      * The method uses {@code SURROUNDING_CELLS_ROW} and {@code SURROUNDING_CELLS_COL}
      * arrays to determine the relative positions of all possible adjacent cells, and
      * {@link MineValidator#inBounds(int, int, int)} to ensure positions are within the grid boundaries.
-
+     * <p>
      * For example:
-     *   [A][B][C]
-     *   [D][X][E]
-     *   [F][G][H]
+     * [A][B][C]
+     * [D][X][E]
+     * [F][G][H]
      * The cell marked 'X' has 8 adjacent positions (A–H). Edge and corner cells
      * will have fewer adjacent cells due to boundary limits.
-
+     * <p>
      * After counting, the number of adjacent mines is stored in the cell so that
      * it can be displayed during gameplay.
      */
@@ -149,11 +148,9 @@ public class MinePlayBord {
         return playGrid;
     }
 
-    public Cell getPlayGridCell(int row,int col){
+    public Cell getPlayGridCell(int row, int col) {
         return playGrid[row][col];
     }
-
-
 
 
 }

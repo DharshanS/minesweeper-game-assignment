@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MinePlayBoardTest {
 
-    MinePlayBord playBord;
 
     @BeforeEach
     void setup() {
-        MinePlayBord playBord = new MinePlayBord(3, 0);
+        // Initial setup if required
+        // MinePlayBord playBord = new MinePlayBord(3, 0);
     }
 
 
@@ -161,7 +161,7 @@ class MinePlayBoardTest {
             }
         }
 
-        //hiting the mine place
+        //hitting the mine place
         for (int r = 0; r < playBord.getSize(); r++) {
             for (int c = 0; c < playBord.getSize(); c++) {
                 if (row == r && col == c) {
