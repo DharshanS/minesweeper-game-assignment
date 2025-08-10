@@ -109,10 +109,13 @@ public class MinePlayBord {
      * @return {@code true} if the revealed cell is safe (no mine), {@code false} if a mine is revealed
      */
     public boolean revealCell(int row, int col) {
-        if (!MineValidator.inBounds(row, col, size) || playGrid[row][col].isRevealed()) return true;
+        if (!MineValidator.inBounds(row, col, size) || playGrid[row][col].isRevealed())
+            return true;
 
         playGrid[row][col].reveal();
-        if (playGrid[row][col].isMine()) return false;
+        if (playGrid[row][col].isMine())
+            return false;
+
         if (playGrid[row][col].getAdjacentMines() == 0) {
             for (int i = 0; i < 8; i++) {
                 revealCell(row + SURROUNDING_CELLS_ROW[i], col + SURROUNDING_CELLS_COL[i]);

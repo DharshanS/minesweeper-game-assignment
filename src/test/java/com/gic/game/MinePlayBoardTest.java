@@ -76,15 +76,18 @@ class MinePlayBoardTest {
     void testRevealCountCheck() {
         MinePlayBord playBord = new MinePlayBord(3, 0);
         playBord.getPlayGridCell(1, 1).reveal();
+        playBord.getPlayGridCell(1, 2).reveal();
         int count = 0;
-        for (Cell[] row : playBord.getPlayGrid()) {
-            for (Cell cell : row) {
-                if (cell.isRevealed()) {
+
+        for (int r = 0; r < playBord.getSize(); r++) {
+            for (int c = 0; c < playBord.getSize(); c++) {
+                if (playBord.getPlayGridCell(r, c).isRevealed()) {
                     count++;
                 }
             }
         }
-        assertEquals(1, count);
+
+        assertEquals(2, count);
     }
 
 
