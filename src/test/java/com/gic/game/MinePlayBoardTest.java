@@ -53,21 +53,20 @@ class MinePlayBoardTest {
     void testMinePlacementCount() {
         MinePlayBord playBord = new MinePlayBord(3, 3);
         int mineCount = 0;
-        for (Cell[] row : playBord.getPlayGrid()) {
-            for (Cell cell : row) {
-                if (cell.isMine()) mineCount++;
+        for (int r = 0; r < playBord.getSize(); r++) {
+            for (int c = 0; c < playBord.getSize(); c++) {
+                if (playBord.getPlayGridCell(r, c).isMine()) mineCount++;
             }
         }
-        ;
         assertEquals(3, mineCount);
     }
 
     @Test
     void testRevealCell() {
         MinePlayBord playBord = new MinePlayBord(3, 0);
-        for (Cell[] row : playBord.getPlayGrid()) {
-            for (Cell cell : row) {
-                assertFalse(cell.isRevealed());
+        for (int r = 0; r < playBord.getSize(); r++) {
+            for (int c = 0; c < playBord.getSize(); c++) {
+                assertFalse(playBord.getPlayGridCell(r, c).isRevealed());
             }
         }
     }
