@@ -45,7 +45,7 @@ public class MinePayGround {
                     System.out.printf("This square contains %d adjacent mine%s.%n",
                             revealedCell.getAdjacentMines(),
                             revealedCell.getAdjacentMines() == 1 ? "" : "s");
-                    System.out.println("\nHere is your updated minefield:\n");
+                    System.out.println("Here is your updated minefield:");
                     MinePlayGroundPrinter.displayMinefield(minePlayBoard, false);
 
                     if (minePlayBoard.allSafeCellsRevealed()) {
@@ -54,7 +54,7 @@ public class MinePayGround {
                     }
                 }
             }
-            System.out.println("1.Press any key to play again ! \n\t\t2.Type 'exit' exit from the game");
+            System.out.println("\n Press any key to play again ! OR Type 'exit' exit from the game");
             scanner.nextLine();
             String line = scanner.nextLine();
             if (line.trim().equalsIgnoreCase("exit")) {
@@ -73,7 +73,8 @@ public class MinePayGround {
         while (true) {
             System.out.println("Enter the size of the grid (e.g. 4 for a 4x4 grid):");
             try {
-                gridSize = scanner.nextInt();
+                String in = scanner.nextLine();
+                gridSize = Integer.parseInt(in);
                 if (gridSize < 2 || gridSize > 26) {
                     System.out.println("Please enter a size between 2 and 26.");
                     continue;
@@ -95,7 +96,8 @@ public class MinePayGround {
             System.out.println("Enter the number of mines to place on the grid (maximum is 35% of the total squares):");
 
             try {
-                mines = scanner.nextInt();
+                String in = scanner.nextLine();
+                mines = Integer.parseInt(in);
                 if (mines < 1 || mines > maxMines) {
                     System.out.printf("Please enter a number between 1 and %d.%n", maxMines);
                     continue;

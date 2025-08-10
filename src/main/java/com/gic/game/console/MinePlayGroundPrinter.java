@@ -10,7 +10,7 @@ public class MinePlayGroundPrinter {
      */
     public static void displayMinefield(MinePlayBord minefield, boolean revealAll) {
         int size = minefield.getSize();
-        System.out.println("    ");
+        System.out.println();
         System.out.print(" ");
         for (int c = 1; c <= size; c++) {
             System.out.print(c + " ");
