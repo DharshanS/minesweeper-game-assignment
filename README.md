@@ -30,7 +30,7 @@ Players can choose the grid size and number of mines, then uncover cells until t
 mvn clean compile 
 
 # Run
-java mvn exec:java
+mvn exec:java
 
 #Run Test
 mvn test
